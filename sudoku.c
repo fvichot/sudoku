@@ -5,7 +5,7 @@
 
 typedef uint8_t** Grid;
 
-uint8_t grid[9][9] = {
+const uint8_t grid[9][9] = {
 {8,0,0, 0,0,0, 0,0,0},
 {0,0,3, 6,0,0, 0,0,0},
 {0,7,0, 0,9,0, 2,0,0},
@@ -19,7 +19,7 @@ uint8_t grid[9][9] = {
 {0,9,0, 0,0,0, 4,0,0}
 };
 
-uint8_t grid2[9][9] = {
+const uint8_t grid2[9][9] = {
 {5,9,0, 0,0,0, 7,0,0},
 {0,0,0, 0,9,0, 0,0,1},
 {0,0,4, 6,0,0, 0,2,0},
@@ -112,7 +112,7 @@ void solve(Grid grid) {
 }
 
 
-char* digits = "0123456789";
+const char* const digits = "0123456789";
 void display_orig(Grid grid, Grid orig) {
     puts("┌───────┬───────┬───────┐");
     for(int i = 0; i < 9; i++) {
@@ -150,7 +150,7 @@ Grid copy_grid(Grid g) {
 }
 
 
-Grid array_to_grid(uint8_t g[9][9]) {
+Grid array_to_grid(const uint8_t g[9][9]) {
     Grid grid = (Grid)malloc(9*sizeof(uint8_t*));
     for(int i = 0; i < 9; i++) {
         grid[i] = (uint8_t*)malloc(9*sizeof(uint8_t));
